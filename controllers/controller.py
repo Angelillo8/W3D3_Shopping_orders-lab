@@ -7,6 +7,7 @@ from models.orders import orders
 def index():
     return render_template('index.jinja', title = 'Orders List', orders = orders)
 
-@app.route('/<page>')
-def order_details(page):
-    return render_template(f'{[page]}')
+@app.route('/order/<order_index>')
+def order(order_index):
+    order = orders[int(order_index)-1]
+    return render_template('order.jinja', order=order)

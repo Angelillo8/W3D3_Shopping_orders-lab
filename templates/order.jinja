@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> {{ title }} - Durham's Veg</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Order - {{order.index}}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
 
-<body>
-    <h1>Durham's Veg - Order List</h1>
-    {%for order in orders%}
-    <p>
-        {{order.type}} - {{order.quantity}}
-    </p>
-    {%endfor%}
-</body>
+    <body>
+        <h1>Miss Durham's Veg</h1>
+        <h3>Order details:</h3>
+        <li>
+            Order index {{order.index}}
+        </li>
+        <li>
+            Customer name: {{order.customer_name}}
+        </li>
+        <li>
+            Date: {{order.order_date}}
+        </li>
+        <li>
+            Product: {{order.type}}
+        </li>
+        <li>
+            Quantity: {{order.quantity}}
+        </li>
+
+        <li>
+            Origin: {{order.origin}}
+        </li>
+    </body>
 
 </html>

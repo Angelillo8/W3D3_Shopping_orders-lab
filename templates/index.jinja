@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> {{ title }} - Durham's Veg</title>
-</head>
-<body>
-  <h1>Durham's Veg - Order List</h1>  
-  {%for order in orders%}
-  <a href="{{url_for('order_details', page=order)}}">Order {{order.index}}: {{order.type}} - Quantity: {{order.quantity}} <br></a>
-  <!-- <p> -->
-    <!-- {{order.type}} - {{order.quantity}}  -->
-  <!-- </p> -->
-  {%endfor%}
-</body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+
+  <body>
+    <h1>Miss Durham's Veg</h1>
+    <h3>Order List</h3>
+    {%for order in orders%}
+    <li><a href="{{url_for('order', order_index=order.index)}}">Order {{order.index}}: {{order.type}} - Quantity:
+        {{order.quantity}}</a></li>
+    {%endfor%}
+  </body>
+
 </html>
