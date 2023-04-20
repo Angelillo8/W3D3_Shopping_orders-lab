@@ -15,6 +15,7 @@
     {%for order in orders%}
     <li><a href="{{url_for('order', order_index=order.index)}}">Order {{order.index}}: {{order.type}} - Quantity:
         {{order.quantity}}</a></li>
+      {# url_for('order', order_index=order.index) 'order' is the name of the function#}
     {%endfor%}
   </body>
 

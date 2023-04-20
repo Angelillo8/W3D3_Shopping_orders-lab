@@ -11,3 +11,4 @@ def index():
 def order(order_index):
     order = orders[int(order_index)-1]
     return render_template('order.jinja', order=order)
+# url_for('order', order_index=order.index) in which 'order' is the name of the function.
